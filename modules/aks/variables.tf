@@ -37,3 +37,15 @@ variable "vnet_subnet_id" {
   type        = string
   description = "ID of the Subnet where the AKS node pool will be deployed (from the vnet module)"
 }
+
+variable "service_cidr" {
+  type        = string
+  description = "CIDR for AKS internal services"
+  default     = "172.16.0.0/16"
+}
+
+variable "dns_service_ip" {
+  type        = string
+  description = "DNS service IP within service_cidr"
+  default     = "172.16.0.10"
+}

@@ -17,4 +17,10 @@ resource "azurerm_kubernetes_cluster" "this" {
   identity {
     type = "SystemAssigned"
   }
+
+  network_profile {
+    network_plugin = "azure"
+    service_cidr   = var.service_cidr
+    dns_service_ip = var.dns_service_ip
+  }
 }

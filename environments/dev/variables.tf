@@ -50,7 +50,7 @@ variable "acr_admin_enabled" {
 variable "aks_vm_size" {
   type        = string
   description = "VM size for the AKS default node pool"
-  default     = "Standard_B2s"
+  default     = "Standard_B2s_v2"
 }
 
 variable "aks_min_count" {

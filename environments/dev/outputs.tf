@@ -10,3 +10,7 @@ output "kube_config" {
   value     = module.aks.kube_config_raw
   sensitive = true
 }
+
+output "postgres_fqdn" {
+  value = module.postgresql.fqdn
+}

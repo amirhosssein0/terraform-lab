@@ -64,3 +64,15 @@ variable "aks_max_count" {
   description = "Maximum node count for AKS autoscaling"
   default     = 3
 }
+
+variable "postgres_admin_login" {
+  type        = string
+  description = "Admin username for PostgreSQL"
+  default     = "psqladmin"
+}
+
+variable "postgres_admin_password" {
+  type        = string
+  description = "Admin password for PostgreSQL — provide via TF_VAR_postgres_admin_password env var"
+  sensitive   = true
+}

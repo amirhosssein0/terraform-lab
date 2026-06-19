@@ -41,3 +41,12 @@ resource "azurerm_role_assignment" "aks_acr_pull" {
   scope                            = module.acr.id
   skip_service_principal_aad_check = true
 }
+
+module "postgresql" {
+  source                  = "../../modules/postgresql"
+  name                    = "${var.project_name}-${var.environment}-psql"
+  location                = var.location
+  resource_group_name     = module.resource_group.name
+  administrator_login     = var.postgres_admin_login
+  administrator_password  = var.postgres_admin_password
+}

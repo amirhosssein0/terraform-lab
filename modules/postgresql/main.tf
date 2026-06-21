@@ -7,4 +7,8 @@ resource "azurerm_postgresql_flexible_server" "this" {
   version                = var.postgres_version
   administrator_login    = var.administrator_login
   administrator_password = var.administrator_password
+
+  lifecycle {
+    ignore_changes = [zone]
+  }
 }

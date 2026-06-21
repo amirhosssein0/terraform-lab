@@ -49,8 +49,8 @@ resource "random_password" "postgres" {
 
 module "postgresql" {
   source                  = "../../modules/postgresql"
-  name                    = "${var.project_name}-${var.environment}-psql2"  
-  location                = var.location
+  name                    = "${var.project_name}-${var.environment}-psql3"  
+  location                = var.postgres_location
   resource_group_name     = module.resource_group.name
   administrator_login     = var.postgres_admin_login
   administrator_password  = random_password.postgres.result

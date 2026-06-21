@@ -1,7 +1,7 @@
 variable "location" {
   type        = string
   description = "Azure region where resources will be deployed"
-  default     = "North Europe"
+  default     = "Canada East"
 }
 
 variable "environment" {
@@ -48,7 +48,7 @@ variable "acr_admin_enabled" {
 variable "aks_vm_size" {
   type        = string
   description = "VM size for the AKS default node pool"
-  default     = "Standard_B2s_v2"
+  default     = "Standard_D2s_v3"
 }
 
 variable "aks_min_count" {
@@ -67,4 +67,10 @@ variable "postgres_admin_login" {
   type        = string
   description = "Admin username for PostgreSQL"
   default     = "psqladmin"
+}
+
+variable "postgres_location" {
+  type        = string
+  description = "Azure region for PostgreSQL Flexible Server"
+  default     = "North Europe"
 }

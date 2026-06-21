@@ -40,6 +40,10 @@ resource "azurerm_role_assignment" "aks_acr_pull" {
   role_definition_name            = "AcrPull"
   scope                            = module.acr.id
   skip_service_principal_aad_check = true
+
+  lifecycle {
+    ignore_changes = [skip_service_principal_aad_check]
+  }
 }
 
 resource "random_password" "postgres" {
